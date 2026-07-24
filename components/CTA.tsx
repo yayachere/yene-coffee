@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function CTA() {
+  const { t } = useLanguage();
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -27,7 +30,7 @@ export default function CTA() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6"
           >
-            Ready for Your Next Coffee?
+            {t.cta.heading}
           </motion.h2>
 
           {/* Subheading */}
@@ -38,9 +41,7 @@ export default function CTA() {
             viewport={{ once: true }}
             className="text-lg sm:text-xl text-foreground/70 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Join us at Yene Coffee and experience the finest Ethiopian coffee
-            crafted with passion and served with warmth. We&apos;re open every day and
-            always ready to welcome you.
+            {t.cta.description}
           </motion.p>
 
           {/* CTA Button */}
@@ -59,7 +60,7 @@ export default function CTA() {
             >
               <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="flex items-center gap-2">
-                Visit Today
+                {t.cta.button}
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
@@ -88,7 +89,7 @@ export default function CTA() {
             className="mt-12 pt-12 border-t border-border"
           >
             <p className="text-foreground/60 text-sm sm:text-base">
-              Open Monday to Sunday • 7:00 AM - 8:00 PM
+              {t.location.hours}
             </p>
           </motion.div>
         </motion.div>

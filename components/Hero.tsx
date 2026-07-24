@@ -3,8 +3,11 @@
 import { motion } from 'framer-motion';
 import { Coffee } from 'lucide-react';
 import Image from 'next/image';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -17,8 +20,8 @@ export default function Hero() {
     >
       {/* Background Image */}
       <Image
-        src="/hero-coffee.png"
-        alt="Yene Coffee Interior"
+        src="/hero-coffee-wolaita.png"
+        alt="Yene Coffee - Wolaita Sodo"
         fill
         className="object-cover"
         priority
@@ -61,7 +64,7 @@ export default function Hero() {
           >
             <Coffee className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium text-accent">
-              Freshly Brewed Every Day
+              {t.hero.badge}
             </span>
           </motion.div>
 
@@ -72,7 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-foreground mb-6 leading-tight"
           >
-            Experience Ethiopia&apos;s Finest Coffee
+            {t.hero.headline}
           </motion.h1>
 
           {/* Description */}
@@ -82,8 +85,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg sm:text-xl text-foreground/80 mb-8 leading-relaxed"
           >
-            Discover the rich heritage of authentic Ethiopian coffee in our cozy,
-            welcoming space. Crafted with passion, served with pride.
+            {t.hero.description}
           </motion.p>
 
           {/* Buttons */}
@@ -99,7 +101,7 @@ export default function Hero() {
               onClick={() => scrollToSection('menu')}
               className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-lg hover:bg-accent transition-colors shadow-lg"
             >
-              View Menu
+              {t.hero.viewMenu}
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -107,7 +109,7 @@ export default function Hero() {
               onClick={() => scrollToSection('location')}
               className="px-8 py-4 border-2 border-primary text-primary rounded-full font-semibold text-lg hover:bg-primary/10 transition-colors"
             >
-              Find Us
+              {t.hero.findUs}
             </motion.button>
           </motion.div>
         </motion.div>
@@ -120,7 +122,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-sm text-foreground/60">Scroll to explore</span>
+          <span className="text-sm text-foreground/60">{t.hero.scrollExplore}</span>
           <div className="w-6 h-10 border-2 border-foreground/40 rounded-full flex items-start justify-center p-2">
             <motion.div
               animate={{ y: [0, 6, 0] }}

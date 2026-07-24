@@ -2,31 +2,34 @@
 
 import { motion } from 'framer-motion';
 import { Zap, Users, Wifi, Award } from 'lucide-react';
-
-const features = [
-  {
-    icon: Award,
-    title: 'Premium Coffee Beans',
-    description: 'Sourced directly from Ethiopian highlands, carefully roasted daily',
-  },
-  {
-    icon: Users,
-    title: 'Experienced Baristas',
-    description: 'Expert coffee makers with passion for their craft',
-  },
-  {
-    icon: Zap,
-    title: 'Comfortable Workspace',
-    description: 'Perfect for working, studying, or relaxing with friends',
-  },
-  {
-    icon: Wifi,
-    title: 'Free WiFi',
-    description: 'High-speed internet for all our guests',
-  },
-];
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Features() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Award,
+      title: t.features.premiumBeans.title,
+      description: t.features.premiumBeans.description,
+    },
+    {
+      icon: Users,
+      title: t.features.expertBaristas.title,
+      description: t.features.expertBaristas.description,
+    },
+    {
+      icon: Zap,
+      title: t.features.comfortableSpace.title,
+      description: t.features.comfortableSpace.description,
+    },
+    {
+      icon: Wifi,
+      title: t.features.freeWifi.title,
+      description: t.features.freeWifi.description,
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -59,10 +62,10 @@ export default function Features() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            Why Choose Us
+            {t.features.title}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Discover what sets Yene Coffee apart from the rest
+            {t.features.title}
           </p>
         </motion.div>
 

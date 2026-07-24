@@ -1,3 +1,5 @@
+'use client';
+
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -8,12 +10,6 @@ import Testimonials from '@/components/Testimonials';
 import Location from '@/components/Location';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
-
-export const metadata = {
-  title: 'Yene Coffee - Ethiopian Coffee Shop',
-  description:
-    'Experience the finest Ethiopian coffee at Yene Coffee. Premium specialty coffee, cozy atmosphere, and authentic craftsmanship.',
-};
 
 export default function Page() {
   return (

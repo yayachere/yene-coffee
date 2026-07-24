@@ -7,33 +7,33 @@ import { X } from 'lucide-react';
 
 const galleryImages = [
   {
-    src: '/gallery-1.png',
-    alt: 'Perfect espresso shot',
+    src: '/gallery-ceremony.png',
+    alt: 'Traditional Ethiopian coffee ceremony',
     size: 'col-span-1 row-span-1',
   },
   {
-    src: '/gallery-2.png',
-    alt: 'Cozy coffee shop interior',
+    src: '/gallery-wolaita-cafe.png',
+    alt: 'Wolaita Sodo local cafe',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
-    src: '/gallery-3.png',
+    src: '/gallery-ethiopian-beans.png',
     alt: 'Ethiopian coffee beans',
     size: 'col-span-1 row-span-1',
   },
   {
-    src: '/gallery-4.png',
-    alt: 'Barista pouring latte art',
+    src: '/gallery-barista-prep.png',
+    alt: 'Expert barista preparing coffee',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
-    src: '/gallery-5.png',
-    alt: 'Customers enjoying coffee',
+    src: '/gallery-community.png',
+    alt: 'Community gathering at Yene Coffee',
     size: 'col-span-1 row-span-1',
   },
   {
-    src: '/gallery-6.png',
-    alt: 'Pastries and desserts',
+    src: '/gallery-wolaita-landscape.png',
+    alt: 'Wolaita Sodo landscape',
     size: 'col-span-1 row-span-1 md:col-span-2',
   },
 ];

@@ -2,31 +2,34 @@
 
 import { motion } from 'framer-motion';
 import { Coffee, Leaf, Home, Heart } from 'lucide-react';
-
-const features = [
-  {
-    icon: Coffee,
-    title: 'Fresh Beans',
-    description: 'Sourced directly from Ethiopian highlands, roasted fresh daily',
-  },
-  {
-    icon: Leaf,
-    title: 'Organic Ingredients',
-    description: '100% natural, ethically sourced, sustainable farming',
-  },
-  {
-    icon: Home,
-    title: 'Cozy Atmosphere',
-    description: 'A warm, welcoming space perfect for work or relaxation',
-  },
-  {
-    icon: Heart,
-    title: 'Crafted With Passion',
-    description: 'Every cup prepared with care and expertise by our baristas',
-  },
-];
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Coffee,
+      title: t.about.features[0].title,
+      description: t.about.features[0].description,
+    },
+    {
+      icon: Leaf,
+      title: t.about.features[1].title,
+      description: t.about.features[1].description,
+    },
+    {
+      icon: Home,
+      title: t.about.features[2].title,
+      description: t.about.features[2].description,
+    },
+    {
+      icon: Heart,
+      title: t.about.features[3].title,
+      description: t.about.features[3].description,
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -59,11 +62,10 @@ export default function About() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            About Yene Coffee
+            {t.about.title}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            We believe that great coffee is more than just a beverage—it&apos;s an
-            experience. Discover what makes us special.
+            {t.about.description}
           </p>
         </motion.div>
 
@@ -113,18 +115,13 @@ export default function About() {
           className="mt-20 bg-background rounded-2xl p-8 sm:p-12 max-w-4xl mx-auto"
         >
           <h3 className="text-3xl font-serif font-bold text-foreground mb-4">
-            Our Story
+            {t.about.story}
           </h3>
           <p className="text-foreground/70 leading-relaxed mb-4">
-            Yene Coffee was founded with a simple mission: to bring the authentic
-            taste of Ethiopian coffee to our community. We work directly with
-            small-scale farmers in the Ethiopian highlands to ensure the highest
-            quality beans while supporting sustainable farming practices.
+            {t.about.storyText1}
           </p>
           <p className="text-foreground/70 leading-relaxed">
-            Every day, our passionate baristas craft each cup with precision and
-            care. Whether you&apos;re looking for a quick pick-me-up or a place to
-            spend your morning, Yene Coffee is your sanctuary.
+            {t.about.storyText2}
           </p>
         </motion.div>
       </div>
