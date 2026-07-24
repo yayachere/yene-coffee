@@ -1,12 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Navbar() {
+  const { language, setLanguage, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -39,11 +42,11 @@ export default function Navbar() {
   };
 
   const links = [
-    { label: 'Home', id: 'home' },
-    { label: 'Menu', id: 'menu' },
-    { label: 'Gallery', id: 'gallery' },
-    { label: 'Location', id: 'location' },
-    { label: 'Contact', id: 'contact' },
+    { label: t.nav.home, id: 'home' },
+    { label: t.nav.menu, id: 'menu' },
+    { label: t.nav.gallery, id: 'gallery' },
+    { label: t.nav.location, id: 'location' },
+    { label: t.nav.contact, id: 'contact' },
   ];
 
   return (
@@ -91,14 +94,64 @@ export default function Navbar() {
             ))}
           </div>
 
+          {/* Language Switcher - Desktop */}
+          <div className="hidden md:flex items-center gap-3 relative">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsLangOpen(!isLangOpen)}
+              className="flex items-center gap-1 px-3 py-2 rounded-full hover:bg-muted transition-colors"
+              aria-label="Select language"
+            >
+              <Globe className="w-4 h-4 text-accent" />
+              <span className="text-sm font-medium text-foreground">
+                {language === 'en' ? 'EN' : 'አም'}
+              </span>
+            </motion.button>
+            {isLangOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="absolute top-12 right-0 bg-background border border-muted rounded-lg shadow-lg z-50"
+              >
+                <button
+                  onClick={() => {
+                    setLanguage('en');
+                    setIsLangOpen(false);
+                  }}
+                  className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors ${
+                    language === 'en'
+                      ? 'bg-accent/20 text-primary'
+                      : 'hover:bg-muted/50 text-foreground'
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    setLanguage('am');
+                    setIsLangOpen(false);
+                  }}
+                  className={`block w-full text-left px-4 py-2 text-sm font-medium transition-colors ${
+                    language === 'am'
+                      ? 'bg-accent/20 text-primary'
+                      : 'hover:bg-muted/50 text-foreground'
+                  }`}
+                >
+                  አማርኛ
+                </button>
+              </motion.div>
+            )}
+          </div>
+
           {/* CTA Button - Desktop */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('contact')}
-            className="hidden md:inline-block px-6 py-2 bg-primary text-primary-foreground rounded-full font-medium hover:bg-accent transition-colors"
+            className="hidden md:inline-block px-6 py-2 bg-primary text-primary-foreground rounded-full font-medium hover:bg-accent transition-colors ml-4"
           >
-            Visit Us
+            {t.nav.visitUs}
           </motion.button>
 
           {/* Mobile Menu Button */}
@@ -139,13 +192,46 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
+            <div className="px-4 py-2 border-t border-muted">
+              <p className="text-sm font-medium text-foreground/60 mb-2">
+                {language === 'en' ? 'Language' : 'ቋንቋ'}
+              </p>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    setLanguage('en');
+                    setIsOpen(false);
+                  }}
+                  className={`flex-1 px-3 py-2 rounded-lg font-medium transition-colors ${
+                    language === 'en'
+                      ? 'bg-accent/20 text-primary'
+                      : 'bg-muted/50 text-foreground hover:bg-muted'
+                  }`}
+                >
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    setLanguage('am');
+                    setIsOpen(false);
+                  }}
+                  className={`flex-1 px-3 py-2 rounded-lg font-medium transition-colors ${
+                    language === 'am'
+                      ? 'bg-accent/20 text-primary'
+                      : 'bg-muted/50 text-foreground hover:bg-muted'
+                  }`}
+                >
+                  አማርኛ
+                </button>
+              </div>
+            </div>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('contact')}
               className="w-full mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-accent transition-colors"
             >
-              Visit Us
+              {t.nav.visitUs}
             </motion.button>
           </div>
         </motion.div>

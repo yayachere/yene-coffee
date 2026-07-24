@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import { Share2, Heart, Send, Music2 } from 'lucide-react';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -31,11 +33,11 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Menu', href: '#menu' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Location', href: '#location' },
-    { label: 'Contact', href: '#contact' },
+    { label: t.nav.home, href: '#home' },
+    { label: t.nav.menu, href: '#menu' },
+    { label: t.nav.gallery, href: '#gallery' },
+    { label: t.nav.location, href: '#location' },
+    { label: t.nav.contact, href: '#contact' },
   ];
 
   return (
@@ -52,8 +54,7 @@ export default function Footer() {
           >
             <h3 className="text-2xl font-serif font-bold mb-3">Yene Coffee</h3>
             <p className="text-background/70 text-sm leading-relaxed">
-              Bringing the finest Ethiopian coffee to Brooklyn, one cup at a
-              time.
+              {t.footer.tagline}
             </p>
           </motion.div>
 
@@ -64,7 +65,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-serif font-bold mb-4">Quick Links</h4>
+            <h4 className="font-serif font-bold mb-4">{t.footer.quickLinks}</h4>
             <ul className="space-y-2 text-sm">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -86,7 +87,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-serif font-bold mb-4">Hours</h4>
+            <h4 className="font-serif font-bold mb-4">{t.footer.hours}</h4>
             <ul className="space-y-2 text-sm text-background/70">
               <li>Mon-Sun</li>
               <li>7:00 AM - 8:00 PM</li>
@@ -108,7 +109,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <h4 className="font-serif font-bold mb-4">Follow Us</h4>
+            <h4 className="font-serif font-bold mb-4">{t.footer.followUs}</h4>
             <div className="flex gap-3 flex-wrap">
               {socialLinks.map((social, index) => (
                 <motion.a
@@ -144,10 +145,10 @@ export default function Footer() {
           </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-background transition-colors">
-              Privacy Policy
+              {t.footer.privacyPolicy}
             </a>
             <a href="#" className="hover:text-background transition-colors">
-              Terms of Service
+              {t.footer.termsOfService}
             </a>
           </div>
         </motion.div>

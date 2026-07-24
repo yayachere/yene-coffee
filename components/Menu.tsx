@@ -3,105 +3,47 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
-
-const menuItems = [
-  {
-    category: 'Coffee',
-    items: [
-      {
-        name: 'Espresso',
-        description: 'Bold and concentrated shot of our signature blend',
-        price: '$3.50',
-        image: '/menu-espresso.png',
-      },
-      {
-        name: 'Cappuccino',
-        description: 'Espresso with velvety steamed milk and rich foam',
-        price: '$4.50',
-        image: '/menu-cappuccino.png',
-      },
-      {
-        name: 'Latte',
-        description: 'Smooth espresso combined with creamy steamed milk',
-        price: '$4.75',
-        image: '/menu-latte.png',
-      },
-      {
-        name: 'Macchiato',
-        description: 'Espresso "marked" with a dollop of milk foam',
-        price: '$4.25',
-        image: '/menu-espresso.png',
-      },
-      {
-        name: 'Mocha',
-        description: 'Rich chocolate and espresso with steamed milk',
-        price: '$5.00',
-        image: '/menu-cappuccino.png',
-      },
-      {
-        name: 'Ethiopian Coffee',
-        description: 'Our specialty: traditional Ethiopian brewing method',
-        price: '$4.00',
-        image: '/menu-espresso.png',
-      },
-    ],
-  },
-  {
-    category: 'Cold Drinks',
-    items: [
-      {
-        name: 'Iced Latte',
-        description: 'Refreshing cold espresso with ice and milk',
-        price: '$4.75',
-        image: '/menu-iced-latte.png',
-      },
-      {
-        name: 'Cold Brew',
-        description: 'Smooth cold-steeped coffee concentrate',
-        price: '$4.50',
-        image: '/menu-iced-latte.png',
-      },
-      {
-        name: 'Iced Mocha',
-        description: 'Chocolate, espresso, and cold milk over ice',
-        price: '$5.25',
-        image: '/menu-iced-latte.png',
-      },
-    ],
-  },
-  {
-    category: 'Snacks',
-    items: [
-      {
-        name: 'Croissant',
-        description: 'Buttery, flaky French pastry',
-        price: '$3.75',
-        image: '/menu-croissant.png',
-      },
-      {
-        name: 'Cake',
-        description: 'Daily fresh-baked seasonal cake',
-        price: '$4.50',
-        image: '/menu-croissant.png',
-      },
-      {
-        name: 'Cookies',
-        description: 'Homemade chocolate chip or oatmeal',
-        price: '$2.50',
-        image: '/menu-croissant.png',
-      },
-      {
-        name: 'Sandwich',
-        description: 'Fresh ingredients with your choice of protein',
-        price: '$7.50',
-        image: '/menu-croissant.png',
-      },
-    ],
-  },
-];
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Menu() {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState(0);
+
+  // Group menu items by category
+  const menuItemsByCategory = [
+    {
+      category: t.menu.categories.coffee,
+      items: t.menu.items.filter((item) => item.category === 'coffee'),
+    },
+    {
+      category: t.menu.categories.coldDrinks,
+      items: t.menu.items.filter((item) => item.category === 'coldDrinks'),
+    },
+    {
+      category: t.menu.categories.snacks,
+      items: t.menu.items.filter((item) => item.category === 'snacks'),
+    },
+  ];
+
+  // Map default images for items
+  const getImageForItem = (name: string, category: string) => {
+    if (category === 'coffee') {
+      if (name.toLowerCase().includes('espresso') || name.toLowerCase().includes('macchiato')) {
+        return '/menu-espresso.png';
+      }
+      if (name.toLowerCase().includes('cappuccino') || name.toLowerCase().includes('mocha')) {
+        return '/menu-cappuccino.png';
+      }
+      if (name.toLowerCase().includes('latte')) {
+        return '/menu-latte.png';
+      }
+    } else if (category === 'coldDrinks') {
+      return '/menu-iced-latte.png';
+    } else {
+      return '/menu-croissant.png';
+    }
+    return '/menu-espresso.png';
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -135,11 +77,10 @@ export default function Menu() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            Our Menu
+            {t.menu.title}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Carefully curated selection of beverages and treats, all crafted with
-            premium ingredients and passion.
+            {t.menu.description}
           </p>
         </motion.div>
 
@@ -151,7 +92,7 @@ export default function Menu() {
           viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          {menuItems.map((category, index) => (
+          {menuItemsByCategory.map((category, index) => (
             <motion.button
               key={index}
               whileHover={{ scale: 1.05 }}
@@ -177,7 +118,7 @@ export default function Menu() {
           key={selectedCategory}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
-          {menuItems[selectedCategory].items.map((item, index) => (
+          {menuItemsByCategory[selectedCategory].items.map((item, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -196,7 +137,7 @@ export default function Menu() {
                     className="w-full h-full"
                   >
                     <Image
-                      src={item.image}
+                      src={getImageForItem(item.name, item.category)}
                       alt={item.name}
                       fill
                       className="object-cover"

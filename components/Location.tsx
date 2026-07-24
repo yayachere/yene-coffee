@@ -2,31 +2,34 @@
 
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Location() {
+  const { t } = useLanguage();
+
   const contactInfo = [
     {
       icon: MapPin,
-      label: 'Address',
-      value: '123 Coffee Street, Brooklyn, NY 11201',
-      href: 'https://maps.google.com/?q=123+Coffee+Street+Brooklyn+NY+11201',
+      label: t.location.address,
+      value: t.location.address,
+      href: '#',
     },
     {
       icon: Phone,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      label: t.location.phone.split(':')[0],
+      value: t.location.phone.split(':')[1]?.trim() || t.location.phone,
+      href: 'tel:' + t.location.phone.replace(/\D/g, ''),
     },
     {
       icon: Mail,
-      label: 'Email',
-      value: 'hello@yenecoffee.com',
-      href: 'mailto:hello@yenecoffee.com',
+      label: t.location.email.split(':')[0],
+      value: t.location.email.split(':')[1]?.trim() || t.location.email,
+      href: 'mailto:' + (t.location.email.split(':')[1]?.trim() || t.location.email),
     },
     {
       icon: Clock,
-      label: 'Hours',
-      value: 'Mon-Sun: 7:00 AM - 8:00 PM',
+      label: t.location.hours.split(':')[0],
+      value: t.location.hours.split(':')[1]?.trim() || t.location.hours,
       href: '#',
     },
   ];
@@ -43,11 +46,10 @@ export default function Location() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            Visit Us
+            {t.location.title}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            We&apos;re located in the heart of Brooklyn, easily accessible and
-            always welcoming
+            {t.location.description}
           </p>
         </motion.div>
 
@@ -96,23 +98,20 @@ export default function Location() {
               viewport={{ once: true }}
               className="mt-8 flex flex-col sm:flex-row gap-4"
             >
-              <motion.a
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://maps.google.com/?q=123+Coffee+Street+Brooklyn+NY+11201"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-accent transition-colors text-center"
               >
-                Get Directions
-              </motion.a>
+                {t.location.getDirections}
+              </motion.button>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="tel:+15551234567"
+                href={'tel:' + t.location.phone.replace(/\D/g, '')}
                 className="px-8 py-4 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary/10 transition-colors text-center"
               >
-                Call Now
+                {t.location.callNow}
               </motion.a>
             </motion.div>
           </motion.div>

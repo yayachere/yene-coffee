@@ -2,35 +2,17 @@
 
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
-
-const testimonials = [
-  {
-    name: 'Sarah Johnson',
-    role: 'Regular Customer',
-    content:
-      'Yene Coffee has become my sanctuary. The atmosphere is perfect for working, and the coffee? Absolutely exceptional. Every cup is a masterpiece.',
-    rating: 5,
-    initials: 'SJ',
-  },
-  {
-    name: 'Marcus Chen',
-    role: 'Coffee Enthusiast',
-    content:
-      'Finally found a place that truly understands specialty coffee. The Ethiopian beans are authentic and full of character. The baristas are incredibly knowledgeable.',
-    rating: 5,
-    initials: 'MC',
-  },
-  {
-    name: 'Emily Rodriguez',
-    role: 'Local Business Owner',
-    content:
-      'This is where community happens. Great coffee, warm hospitality, and a space that brings people together. Highly recommended!',
-    rating: 5,
-    initials: 'ER',
-  },
-];
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Testimonials() {
+  const { t } = useLanguage();
+
+  const testimonials = t.testimonials.reviews.map((review, index) => ({
+    ...review,
+    role: 'Customer',
+    initials: review.name.split(' ').map((n) => n[0]).join(''),
+  }));
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,10 +45,10 @@ export default function Testimonials() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            What Our Customers Say
+            {t.testimonials.title}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Join hundreds of satisfied customers who have made Yene Coffee their favorite spot
+            {t.testimonials.title}
           </p>
         </motion.div>
 
@@ -101,7 +83,7 @@ export default function Testimonials() {
 
                 {/* Quote */}
                 <p className="text-foreground/80 leading-relaxed mb-6 flex-1 italic">
-                  &quot;{testimonial.content}&quot;
+                  &quot;{testimonial.text}&quot;
                 </p>
 
                 {/* Author */}
