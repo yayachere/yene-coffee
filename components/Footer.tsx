@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Share2, Instagram, Send, Music2 } from 'lucide-react';
+import { Share2, Heart, Send, Music2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -14,7 +14,7 @@ export default function Footer() {
       label: 'Facebook',
     },
     {
-      icon: Instagram,
+      icon: Heart,
       href: 'https://instagram.com',
       label: 'Instagram',
     },
