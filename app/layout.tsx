@@ -1,7 +1,6 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import { LanguageProvider } from '@/lib/LanguageContext'
+import { Providers } from './providers'
 
 export const metadata: Metadata = {
   title: 'Yene Coffee - Premium Ethiopian Coffee',
@@ -32,10 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background scroll-smooth">
       <body className="antialiased">
-        <LanguageProvider>
-          {children}
-          {process.env.NODE_ENV === 'production' && <Analytics />}
-        </LanguageProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
