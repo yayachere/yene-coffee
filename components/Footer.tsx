@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, MessageCircle, Music2 } from 'lucide-react';
+import { Share2, Instagram, Send, Music2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
 
   const socialLinks = [
     {
-      icon: Facebook,
+      icon: Share2,
       href: 'https://facebook.com',
       label: 'Facebook',
     },
@@ -19,7 +19,7 @@ export default function Footer() {
       label: 'Instagram',
     },
     {
-      icon: MessageCircle,
+      icon: Send,
       href: 'https://telegram.org',
       label: 'Telegram',
     },
