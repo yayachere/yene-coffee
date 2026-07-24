@@ -1,0 +1,247 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useState } from 'react';
+
+const menuItems = [
+  {
+    category: 'Coffee',
+    items: [
+      {
+        name: 'Espresso',
+        description: 'Bold and concentrated shot of our signature blend',
+        price: '$3.50',
+        image: '/menu-espresso.png',
+      },
+      {
+        name: 'Cappuccino',
+        description: 'Espresso with velvety steamed milk and rich foam',
+        price: '$4.50',
+        image: '/menu-cappuccino.png',
+      },
+      {
+        name: 'Latte',
+        description: 'Smooth espresso combined with creamy steamed milk',
+        price: '$4.75',
+        image: '/menu-latte.png',
+      },
+      {
+        name: 'Macchiato',
+        description: 'Espresso "marked" with a dollop of milk foam',
+        price: '$4.25',
+        image: '/menu-espresso.png',
+      },
+      {
+        name: 'Mocha',
+        description: 'Rich chocolate and espresso with steamed milk',
+        price: '$5.00',
+        image: '/menu-cappuccino.png',
+      },
+      {
+        name: 'Ethiopian Coffee',
+        description: 'Our specialty: traditional Ethiopian brewing method',
+        price: '$4.00',
+        image: '/menu-espresso.png',
+      },
+    ],
+  },
+  {
+    category: 'Cold Drinks',
+    items: [
+      {
+        name: 'Iced Latte',
+        description: 'Refreshing cold espresso with ice and milk',
+        price: '$4.75',
+        image: '/menu-iced-latte.png',
+      },
+      {
+        name: 'Cold Brew',
+        description: 'Smooth cold-steeped coffee concentrate',
+        price: '$4.50',
+        image: '/menu-iced-latte.png',
+      },
+      {
+        name: 'Iced Mocha',
+        description: 'Chocolate, espresso, and cold milk over ice',
+        price: '$5.25',
+        image: '/menu-iced-latte.png',
+      },
+    ],
+  },
+  {
+    category: 'Snacks',
+    items: [
+      {
+        name: 'Croissant',
+        description: 'Buttery, flaky French pastry',
+        price: '$3.75',
+        image: '/menu-croissant.png',
+      },
+      {
+        name: 'Cake',
+        description: 'Daily fresh-baked seasonal cake',
+        price: '$4.50',
+        image: '/menu-croissant.png',
+      },
+      {
+        name: 'Cookies',
+        description: 'Homemade chocolate chip or oatmeal',
+        price: '$2.50',
+        image: '/menu-croissant.png',
+      },
+      {
+        name: 'Sandwich',
+        description: 'Fresh ingredients with your choice of protein',
+        price: '$7.50',
+        image: '/menu-croissant.png',
+      },
+    ],
+  },
+];
+
+export default function Menu() {
+  const [selectedCategory, setSelectedCategory] = useState(0);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  return (
+    <section id="menu" className="py-20 sm:py-28 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 sm:mb-20"
+        >
+          <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
+            Our Menu
+          </h2>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            Carefully curated selection of beverages and treats, all crafted with
+            premium ingredients and passion.
+          </p>
+        </motion.div>
+
+        {/* Category Tabs */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {menuItems.map((category, index) => (
+            <motion.button
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setSelectedCategory(index)}
+              className={`px-6 py-3 rounded-full font-semibold transition-all ${
+                selectedCategory === index
+                  ? 'bg-primary text-primary-foreground shadow-lg'
+                  : 'bg-card border-2 border-primary/20 text-foreground hover:border-primary'
+              }`}
+            >
+              {category.category}
+            </motion.button>
+          ))}
+        </motion.div>
+
+        {/* Menu Items Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          key={selectedCategory}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        >
+          {menuItems[selectedCategory].items.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="group"
+            >
+              <motion.div
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3 }}
+                className="bg-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow h-full flex flex-col"
+              >
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden bg-muted">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                    className="w-full h-full"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-serif font-bold text-foreground mb-2">
+                    {item.name}
+                  </h3>
+                  <p className="text-foreground/60 text-sm leading-relaxed mb-4 flex-1">
+                    {item.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold text-accent">
+                      {item.price}
+                    </span>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="p-2 bg-accent/20 rounded-full text-accent hover:bg-accent hover:text-primary transition-colors"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 4v16m8-8H4"
+                        />
+                      </svg>
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
