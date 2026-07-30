@@ -54,6 +54,13 @@ export const en = {
       "We work directly with local farmers and practice traditional Ethiopian coffee preparation methods. Every cup honors the centuries-old tradition of the Ethiopian coffee ceremony while embracing modern café culture. Whether you're seeking a moment of reflection or a space to connect with others, Yene Coffee is your sanctuary.",
   },
 
+  // Gallery
+  gallery: {
+    title: 'Gallery',
+    description:
+      'Experience the essence of Yene Coffee through our collection of moments and memories.',
+  },
+
   // Menu
   menu: {
     title: 'Our Menu',

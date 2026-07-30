@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const galleryImages = [
   {
@@ -39,6 +40,7 @@ const galleryImages = [
 ];
 
 export default function Gallery() {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const containerVariants = {
@@ -73,11 +75,10 @@ export default function Gallery() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            Gallery
+            {t.gallery.title}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Experience the essence of Yene Coffee through our collection of
-            moments and memories.
+            {t.gallery.description}
           </p>
         </motion.div>
 
