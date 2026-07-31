@@ -54,6 +54,13 @@ export const en = {
       "We work directly with local farmers and practice traditional Ethiopian coffee preparation methods. Every cup honors the centuries-old tradition of the Ethiopian coffee ceremony while embracing modern café culture. Whether you're seeking a moment of reflection or a space to connect with others, Yene Coffee is your sanctuary.",
   },
 
+  // Gallery
+  gallery: {
+    title: 'Gallery',
+    description:
+      'Experience the essence of Yene Coffee through our collection of moments and memories.',
+  },
+
   // Menu
   menu: {
     title: 'Our Menu',
@@ -201,8 +208,8 @@ export const en = {
     title: 'Visit Us',
     description: 'Located in Wolaita Sodo, easily accessible and always welcoming',
     address: 'Wolaita Sodo, Ethiopia',
-    phone: '+251-123-456-789',
-    email: 'hello@yenecoffee.com',
+    phone: '+251-939-455-149',
+    email: 'yenecoffee@gmail.com',
     hours: 'Mon-Sun: 7:00 AM - 8:00 PM',
     getDirections: 'Get Directions',
     callNow: 'Call Now',
@@ -213,6 +220,7 @@ export const en = {
     heading: 'Ready for Your Perfect Cup?',
     description: 'Join us at Yene Coffee and experience Ethiopian hospitality',
     button: 'Visit Us Today',
+    call: 'Call Us',
   },
 
   // Footer

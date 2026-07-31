@@ -89,14 +89,13 @@ export default function Footer() {
           >
             <h4 className="font-serif font-bold mb-4">{t.footer.hours}</h4>
             <ul className="space-y-2 text-sm text-background/70">
-              <li>Mon-Sun</li>
-              <li>7:00 AM - 8:00 PM</li>
+              <li>{t.location.hours}</li>
               <li className="mt-4 pt-4 border-t border-background/20">
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+251-939-455-149"
                   className="hover:text-background transition-colors"
                 >
-                  +1 (555) 123-4567
+                  {t.location.phone}
                 </a>
               </li>
             </ul>

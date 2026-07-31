@@ -4,12 +4,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 const galleryImages = [
   {
     src: '/gallery-ceremony.png',
     alt: 'Traditional Ethiopian coffee ceremony',
-    size: 'col-span-1 row-span-1',
+    size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
     src: '/gallery-wolaita-cafe.png',
@@ -19,7 +20,7 @@ const galleryImages = [
   {
     src: '/gallery-ethiopian-beans.png',
     alt: 'Ethiopian coffee beans',
-    size: 'col-span-1 row-span-1',
+    size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
     src: '/gallery-barista-prep.png',
@@ -29,16 +30,17 @@ const galleryImages = [
   {
     src: '/gallery-community.png',
     alt: 'Community gathering at Yene Coffee',
-    size: 'col-span-1 row-span-1',
+    size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
     src: '/gallery-wolaita-landscape.png',
     alt: 'Wolaita Sodo landscape',
-    size: 'col-span-1 row-span-1 md:col-span-2',
+    size: 'col-span-2 row-span-1 md:col-span-1',
   },
 ];
 
 export default function Gallery() {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const containerVariants = {
@@ -73,12 +75,8 @@ export default function Gallery() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-foreground mb-4">
-            Gallery
+            {t.gallery.title}
           </h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Experience the essence of Yene Coffee through our collection of
-            moments and memories.
-          </p>
         </motion.div>
 
         {/* Masonry Grid */}

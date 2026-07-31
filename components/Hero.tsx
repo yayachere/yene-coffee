@@ -63,7 +63,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full mb-6"
           >
             <Coffee className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent">
+            <span className="text-sm font-medium text-foreground">
               {t.hero.badge}
             </span>
           </motion.div>
