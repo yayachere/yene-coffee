@@ -18,7 +18,7 @@ export default function Location() {
       icon: Phone,
       label: t.location.phone.split(':')[0],
       value: t.location.phone.split(':')[1]?.trim() || t.location.phone,
-      href: 'tel:' + t.location.phone.replace(/\D/g, ''),
+      href: "tel:+251-939-455-149",
     },
     {
       icon: Mail,
@@ -108,7 +108,7 @@ export default function Location() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href={'tel:' + t.location.phone.replace(/\D/g, '')}
+                href={'tel:+251-939-455-149'}
                 className="px-8 py-4 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary/10 transition-colors text-center"
               >
                 {t.location.callNow}
@@ -125,7 +125,7 @@ export default function Location() {
             className="rounded-2xl overflow-hidden shadow-lg h-96 lg:h-full"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3961.3194131337655!2d37.763411!3d6.8522630000000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTEnMDguMiJOIDM3wrA0NSc0OC4zIkU!5e0!3m2!1sen!2set!4v1785437105400!5m2!1sen!2set" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.3194222727675!2d37.76323!3d6.852261899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b1b100158658a9%3A0x7d7a1985d0f93de3!2sYene%20coffee!5e0!3m2!1sen!2set!4v1785780855649!5m2!1sen!2set" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
