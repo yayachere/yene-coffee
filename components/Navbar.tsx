@@ -37,6 +37,7 @@ export default function Navbar() {
 
   const scrollToSection = (id: string) => {
     setIsOpen(false);
+    setIsLangOpen(false);
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -176,14 +177,14 @@ export default function Navbar() {
             height: isOpen ? 'auto' : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden"
+          className="md:hidden overflow-hidden bg-background/95 backdrop-blur-sm"
         >
-          <div className="pb-4 space-y-2">
+          <div className="max-h-[calc(100vh-64px)] overflow-y-auto pb-4 space-y-2 px-4 pt-4">
             {links.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                className={`block w-full text-left px-4 py-3 rounded-lg transition-colors text-sm font-medium ${
                   activeSection === link.id
                     ? 'bg-accent/20 text-primary'
                     : 'text-foreground hover:bg-muted/50'
@@ -192,8 +193,8 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
-            <div className="px-4 py-2 border-t border-muted">
-              <p className="text-sm font-medium text-foreground/60 mb-2">
+            <div className="px-4 py-3 border-t border-muted mt-2">
+              <p className="text-xs font-medium text-foreground/60 mb-3">
                 {language === 'en' ? 'Language' : 'ቋንቋ'}
               </p>
               <div className="flex gap-2">
@@ -202,7 +203,7 @@ export default function Navbar() {
                     setLanguage('en');
                     setIsOpen(false);
                   }}
-                  className={`flex-1 px-3 py-2 rounded-lg font-medium transition-colors ${
+                  className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     language === 'en'
                       ? 'bg-accent/20 text-primary'
                       : 'bg-muted/50 text-foreground hover:bg-muted'
@@ -215,7 +216,7 @@ export default function Navbar() {
                     setLanguage('am');
                     setIsOpen(false);
                   }}
-                  className={`flex-1 px-3 py-2 rounded-lg font-medium transition-colors ${
+                  className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     language === 'am'
                       ? 'bg-accent/20 text-primary'
                       : 'bg-muted/50 text-foreground hover:bg-muted'
@@ -229,7 +230,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => scrollToSection('contact')}
-              className="w-full mt-4 px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-accent transition-colors"
+              className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-accent transition-colors text-sm"
             >
               {t.nav.visitUs}
             </motion.button>

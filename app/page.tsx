@@ -15,15 +15,17 @@ export default function Page() {
   return (
     <main className="bg-background text-foreground">
       <Navbar />
-      <Hero />
-      <About />
-      <Menu />
-      <Gallery />
-      <Features />
-      <Testimonials />
-      <Location />
-      <CTA />
-      <Footer />
+      <div className="pt-16">
+        <Hero />
+        <About />
+        <Menu />
+        <Gallery />
+        <Features />
+        <Testimonials />
+        <Location />
+        <CTA />
+        <Footer />
+      </div>
     </main>
   );
 }
