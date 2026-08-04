@@ -22,12 +22,12 @@ export default function Features() {
       icon: Zap,
       title: t.features.comfortableSpace.title,
       description: t.features.comfortableSpace.description,
-    },
+    },/*
     {
       icon: Wifi,
       title: t.features.freeWifi.title,
       description: t.features.freeWifi.description,
-    },
+    },*/
   ];
 
   const containerVariants = {
@@ -75,7 +75,7 @@ export default function Features() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           {features.map((feature, index) => (
             <motion.div
