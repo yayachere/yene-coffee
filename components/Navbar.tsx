@@ -43,7 +43,7 @@ export default function Navbar() {
   };
 
   const links = [
-    { label: t.nav.home, id: 'home' },
+    { label: t.nav.home, id: '#home' },
     { label: t.nav.menu, id: 'menu' },
     { label: t.nav.gallery, id: 'gallery' },
     { label: t.nav.location, id: 'location' },
