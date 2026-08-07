@@ -42,11 +42,13 @@ export default function Navbar() {
     const element = document.getElementById(id);
     if (!element) return;
 
-    const navbarHeight = 64;
-    const top =
-      element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    window.setTimeout(() => {
+      const navbarHeight = 64;
+      const top =
+        element.getBoundingClientRect().top + window.scrollY - navbarHeight;
 
-    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }, 0);
   };
 
   const links = [
