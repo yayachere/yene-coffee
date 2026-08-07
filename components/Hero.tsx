@@ -16,20 +16,20 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full h-screen min-h-screen overflow-hidden"
+      className="pointer-events-none relative w-full h-screen min-h-screen overflow-hidden"
     >
       {/* Background Image */}
       <Image
         src="/hero-coffee-wolaita.png"
         alt="Yene Coffee - Wolaita Sodo"
         fill
-        className="object-cover"
+        className="pointer-events-none object-cover"
         priority
         quality={90}
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/70" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/60 via-background/50 to-background/70" />
 
       {/* Floating decoration */}
       <motion.div
@@ -42,18 +42,18 @@ export default function Hero() {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="absolute top-20 right-10 text-6xl opacity-30"
+        className="pointer-events-none absolute top-20 right-10 text-6xl opacity-30"
       >
         ☕
       </motion.div>
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
+          className="text-center max-w-2xl pointer-events-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center max-w-2xl"
         >
           {/* Badge */}
           <motion.div
@@ -63,7 +63,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full mb-6"
           >
             <Coffee className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-foreground">
+            <span className="text-sm font-medium text-accent">
               {t.hero.badge}
             </span>
           </motion.div>
@@ -119,7 +119,7 @@ export default function Hero() {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="pointer-events-none absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-sm text-foreground/60">{t.hero.scrollExplore}</span>

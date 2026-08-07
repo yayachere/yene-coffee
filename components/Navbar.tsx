@@ -38,8 +38,17 @@ export default function Navbar() {
   const scrollToSection = (id: string) => {
     setIsOpen(false);
     setIsLangOpen(false);
+
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (!element) return;
+
+    window.setTimeout(() => {
+      const navbarHeight = 64;
+      const top =
+        element.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }, 0);
   };
 
   const links = [
@@ -52,8 +61,8 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
@@ -177,7 +186,7 @@ export default function Navbar() {
             height: isOpen ? 'auto' : 0,
           }}
           transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-background/95 backdrop-blur-sm"
+          className="pointer-events-auto fixed inset-x-0 top-16 z-[60] overflow-hidden bg-background/95 backdrop-blur-sm md:hidden"
         >
           <div className="max-h-[calc(100vh-64px)] overflow-y-auto pb-4 space-y-2 px-4 pt-4">
             {links.map((link) => (
