@@ -125,7 +125,7 @@ export default function Location() {
             className="min-w-0 max-w-full rounded-2xl overflow-hidden shadow-lg h-96 lg:h-full"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567890!2d-73.9857!3d40.6976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQxJzUzLjQiTiA3M8KwNTknMDguMCJX!5e0!3m2!1sen!2sus!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.3194222727675!2d37.76323!3d6.852261899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17b1b100158658a9%3A0x7d7a1985d0f93de3!2sYene%20coffee!5e0!3m2!1sen!2set!4v1786292648861!5m2!1sen!2set"
               width="100%"
               height="100%"
               className="block max-w-full"
