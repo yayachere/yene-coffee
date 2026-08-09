@@ -13,7 +13,7 @@ import Footer from '@/components/Footer';
 
 export default function Page() {
   return (
-    <main className="bg-background text-foreground">
+    <main className="overflow-x-clip bg-background text-foreground">
       <Navbar />
       <div className="pt-16">
         <Hero />

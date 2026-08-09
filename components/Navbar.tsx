@@ -64,17 +64,17 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 w-full max-w-full overflow-x-clip transition-all duration-300 ${
         isScrolled
           ? 'bg-background/95 backdrop-blur-sm shadow-lg'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex min-w-0 w-full justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <div className="text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
+          <Link href="/" className="flex min-w-0 shrink items-center group">
+            <div className="truncate text-2xl font-serif font-bold text-primary group-hover:text-accent transition-colors">
               Yene Coffee
             </div>
           </Link>
@@ -166,7 +166,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="shrink-0 md:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
