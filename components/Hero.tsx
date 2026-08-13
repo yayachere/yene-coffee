@@ -62,8 +62,8 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full mb-6"
           >
-            <Coffee className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent">
+            <Coffee className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-medium text-foreground">
               {t.hero.badge}
             </span>
           </motion.div>

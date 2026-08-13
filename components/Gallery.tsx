@@ -8,32 +8,32 @@ import { useLanguage } from '@/lib/LanguageContext';
 
 const galleryImages = [
   {
-    src: '/gallery-ceremony.png',
+    src: '/gallery_1.jpg',
     alt: 'Traditional Ethiopian coffee ceremony',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
-    src: '/gallery-wolaita-cafe.png',
+    src: '/gallery_2.jpg',
     alt: 'Wolaita Sodo local cafe',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
-    src: '/gallery-ethiopian-beans.png',
+    src: '/gallery_3.jpg',
     alt: 'Ethiopian coffee beans',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
-    src: '/gallery-barista-prep.png',
+    src: '/gallery_4.jpg',
     alt: 'Expert barista preparing coffee',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
-    src: '/gallery-community.png',
+    src: '/gallery_5.jpg',
     alt: 'Community gathering at Yene Coffee',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
   {
-    src: '/gallery-wolaita-landscape.png',
+    src: '/gallery_6.jpg',
     alt: 'Wolaita Sodo landscape',
     size: 'col-span-2 row-span-1 md:col-span-1',
   },
