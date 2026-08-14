@@ -83,42 +83,18 @@ export const am = {
         name: 'ኤስፕሬሶ',
         description:
           'የእኛን ልዩ የኢትዮጵያ የቡና ድብልቅ ጣዕም የሚያሳይ ጠንካራና የተጠናከረ ቡና',
-        price: '$3.50',
-      },
-      {
-        category: 'coffee',
-        name: 'ካፑቺኖ',
-        description:
-          'ኤስፕሬሶ ከለሰለሰ የተነፈሰ ወተትና የበለፀገ አረፋ ጋር',
-        price: '$4.50',
-      },
-      {
-        category: 'coffee',
-        name: 'ላቴ',
-        description:
-          'ለስላሳ ኤስፕሬሶ ከክሬም ያለው የተነፈሰ ወተት ጋር የተቀላቀለ',
-        price: '$4.75',
       },
       {
         category: 'coffee',
         name: 'ማኪያቶ',
         description:
           'ኤስፕሬሶ በቀለለ የወተት አረፋ የተሸፈነ ልዩ የቡና ጣዕም',
-        price: '$4.25',
-      },
-      {
-        category: 'coffee',
-        name: 'ሞካ',
-        description:
-          'የበለፀገ ቸኮሌት፣ ኤስፕሬሶና የተነፈሰ ወተት የተቀላቀለበት',
-        price: '$5.00',
       },
       {
         category: 'coffee',
         name: 'የኢትዮጵያ ቡና',
         description:
           'ልዩ ምርጫችን፤ ባህላዊ የኢትዮጵያ የቡና አፈላል ሥነ-ሥርዓትን በመከተል የተዘጋጀ',
-        price: '$4.00',
       },
 
       // Cold Drinks
@@ -127,51 +103,38 @@ export const am = {
         name: 'ቀዝቃዛ ላቴ',
         description:
           'ትኩስነት የሚሰጥ ቀዝቃዛ ኤስፕሬሶ ከበረዶና ክሬም ካለው ወተት ጋር',
-        price: '$4.75',
       },
       {
         category: 'coldDrinks',
         name: 'ቀዝቃዛ ቡና',
         description:
           'በቀስታ የተዘጋጀ ለስላሳና የበለፀገ የኢትዮጵያ ቡና ማጣጣሚያ',
-        price: '$4.50',
       },
       {
         category: 'coldDrinks',
         name: 'ቀዝቃዛ ሞካ',
         description:
           'ቸኮሌት፣ ኤስፕሬሶና ቀዝቃዛ ወተት በበረዶ ላይ የተዘጋጀ',
-        price: '$5.25',
       },
 
       // Snacks
       {
         category: 'snacks',
-        name: 'ክሮሳንት',
-        description:
-          'በቅቤ የተዘጋጀ ቀለል ያለና በቀላሉ የሚፈርስ የፈረንሳይ ለጣፋጭ ከቡና ጋር ተስማሚ',
-        price: '$3.75',
-      },
-      {
-        category: 'snacks',
         name: 'ባህላዊ ዳቦ',
         description:
           'ትኩስ የተጋገረ የኢትዮጵያ ዳቦ ከማር ጋር የሚቀርብ',
-        price: '$4.50',
       },
       {
         category: 'snacks',
         name: 'የተለያዩ ጣፋጭ ምግቦች',
         description:
           'ከአካባቢው ግብዓቶች የተዘጋጁ የቤት ሥራ ወቅታዊ ጣፋጭ ምግቦች',
-        price: '$2.50',
       },
       {
         category: 'snacks',
         name: 'ሳንድዊች',
         description:
           'ትኩስ ግብዓቶችን በመጠቀም በመረጡት የፕሮቲን አይነት የተዘጋጀ',
-        price: '$7.50',
       },
     ],
   },

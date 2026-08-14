@@ -38,11 +38,11 @@ export default function Menu() {
         return '/menu-latte.png';
       }
     } else if (category === 'coldDrinks') {
-      return '/menu-iced-latte.png';
+      return '/water_menu2.jpg';
     } else {
-      return '/menu-croissant.png';
+      return '/chips_menu.jpg';
     }
-    return '/menu-espresso.png';
+    return '/coffee_menu.jpg';
   };
 
   const containerVariants = {
@@ -154,9 +154,7 @@ export default function Menu() {
                     {item.description}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-accent">
-                      {item.price}
-                    </span>
+                    
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}

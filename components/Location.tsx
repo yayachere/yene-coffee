@@ -18,7 +18,7 @@ export default function Location() {
       icon: Phone,
       label: t.location.phone.split(':')[0],
       value: t.location.phone.split(':')[1]?.trim() || t.location.phone,
-      href: 'tel:' + t.location.phone.replace(/\D/g, ''),
+      href: 'tel:' + t.location.phone, 
     },
     {
       icon: Mail,
@@ -28,8 +28,7 @@ export default function Location() {
     },
     {
       icon: Clock,
-      label: t.location.hours.split(':')[0],
-      value: t.location.hours.split(':')[1]?.trim() || t.location.hours,
+      value: t.location.hours || t.location.hours.split(':')[1]?.trim(),
       href: '#',
     },
   ];
@@ -76,7 +75,7 @@ export default function Location() {
                   className="group flex items-start gap-4 p-4 rounded-xl hover:bg-card transition-colors cursor-pointer"
                 >
                   <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
-                    <item.icon className="w-6 h-6 text-accent" />
+                    <item.icon className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
                     <h3 className="font-serif font-bold text-foreground text-lg mb-1">
@@ -108,7 +107,7 @@ export default function Location() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href={'tel:' + t.location.phone.replace(/\D/g, '')}
+                href={'tel:' + t.location.phone}
                 className="px-8 py-4 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary/10 transition-colors text-center"
               >
                 {t.location.callNow}

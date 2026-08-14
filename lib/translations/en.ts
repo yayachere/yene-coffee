@@ -77,82 +77,49 @@ export const en = {
         category: 'coffee',
         name: 'Espresso',
         description: 'Bold and concentrated shot of our signature Ethiopian blend',
-        price: '$3.50',
-      },
-      {
-        category: 'coffee',
-        name: 'Cappuccino',
-        description: 'Espresso with velvety steamed milk and rich foam',
-        price: '$4.50',
-      },
-      {
-        category: 'coffee',
-        name: 'Latte',
-        description: 'Smooth espresso combined with creamy steamed milk',
-        price: '$4.75',
       },
       {
         category: 'coffee',
         name: 'Macchiato',
         description: 'Espresso "marked" with a dollop of silky milk foam',
-        price: '$4.25',
-      },
-      {
-        category: 'coffee',
-        name: 'Mocha',
-        description: 'Rich chocolate and espresso with steamed milk',
-        price: '$5.00',
       },
       {
         category: 'coffee',
         name: 'Ethiopian Coffee',
         description:
           'Our specialty: traditional Ethiopian brewing ceremony method',
-        price: '$4.00',
       },
       // Cold Drinks
       {
         category: 'coldDrinks',
         name: 'Iced Latte',
         description: 'Refreshing cold espresso with ice and creamy milk',
-        price: '$4.75',
       },
       {
         category: 'coldDrinks',
         name: 'Cold Brew',
         description: 'Smooth cold-steeped Ethiopian coffee concentrate',
-        price: '$4.50',
       },
       {
         category: 'coldDrinks',
         name: 'Iced Mocha',
         description: 'Chocolate, espresso, and cold milk over ice',
-        price: '$5.25',
       },
       // Snacks
       {
         category: 'snacks',
-        name: 'Croissant',
-        description: 'Buttery, flaky French pastry perfect with coffee',
-        price: '$3.75',
-      },
-      {
-        category: 'snacks',
         name: 'Traditional Bread',
         description: 'Fresh-baked Ethiopian bread served with honey',
-        price: '$4.50',
       },
       {
         category: 'snacks',
         name: 'Pastries',
         description: 'Homemade seasonal pastries with local ingredients',
-        price: '$2.50',
       },
       {
         category: 'snacks',
         name: 'Sandwich',
         description: 'Fresh ingredients with your choice of protein',
-        price: '$7.50',
       },
     ],
   },

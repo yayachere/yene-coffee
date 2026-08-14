@@ -94,7 +94,7 @@ export default function Features() {
                   transition={{ duration: 0.3 }}
                   className="w-16 h-16 mx-auto bg-accent/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors"
                 >
-                  <feature.icon className="w-8 h-8 text-accent" />
+                  <feature.icon className="w-8 h-8 text-foreground" />
                 </motion.div>
 
                 {/* Title */}
