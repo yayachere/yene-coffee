@@ -77,49 +77,57 @@ export const en = {
         category: 'coffee',
         name: 'Espresso',
         description: 'Bold and concentrated shot of our signature Ethiopian blend',
+        href: '/menu-espresso.png',
       },
       {
         category: 'coffee',
         name: 'Macchiato',
         description: 'Espresso "marked" with a dollop of silky milk foam',
+        href: '/menu-cappuccino.png',
       },
       {
         category: 'coffee',
         name: 'Ethiopian Coffee',
-        description:
-          'Our specialty: traditional Ethiopian brewing ceremony method',
+        description: 'Our specialty: traditional Ethiopian brewing ceremony method',
+        href: '/coffee_menu.jpg',
       },
       // Cold Drinks
       {
         category: 'coldDrinks',
         name: 'Iced Latte',
         description: 'Refreshing cold espresso with ice and creamy milk',
+        href: '/menu-iced-latte.png',
       },
       {
         category: 'coldDrinks',
-        name: 'Cold Brew',
+        name: 'Cold Water',
         description: 'Smooth cold-steeped Ethiopian coffee concentrate',
+        href: '/water_menu2.jpg',
       },
       {
         category: 'coldDrinks',
         name: 'Iced Mocha',
         description: 'Chocolate, espresso, and cold milk over ice',
+        href: '/menu-iced-mocha.jpg',
       },
       // Snacks
       {
         category: 'snacks',
         name: 'Traditional Bread',
         description: 'Fresh-baked Ethiopian bread served with honey',
+        href: '/menu-ambasha.jpg',
       },
       {
         category: 'snacks',
         name: 'Pastries',
         description: 'Homemade seasonal pastries with local ingredients',
+        href: '/menu-croissant.png',
       },
       {
         category: 'snacks',
-        name: 'Sandwich',
+        name: 'Chips',
         description: 'Fresh ingredients with your choice of protein',
+        href: '/chips_menu.jpg',
       },
     ],
   },

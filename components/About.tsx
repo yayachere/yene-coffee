@@ -93,7 +93,7 @@ export default function About() {
                   transition={{ duration: 0.3 }}
                   className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors"
                 >
-                  <feature.icon className="w-8 h-8 text-accent" />
+                  <feature.icon className="w-8 h-8 text-foreground" />
                 </motion.div>
                 <h3 className="text-xl font-serif font-bold text-foreground mb-3">
                   {feature.title}

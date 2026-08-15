@@ -142,14 +142,6 @@ export default function Footer() {
           <p>
             &copy; {currentYear} Yene Coffee. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-background transition-colors">
-              {t.footer.privacyPolicy}
-            </a>
-            <a href="#" className="hover:text-background transition-colors">
-              {t.footer.termsOfService}
-            </a>
-          </div>
         </motion.div>
       </div>
     </footer>

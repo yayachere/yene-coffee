@@ -83,18 +83,21 @@ export const am = {
         name: 'ኤስፕሬሶ',
         description:
           'የእኛን ልዩ የኢትዮጵያ የቡና ድብልቅ ጣዕም የሚያሳይ ጠንካራና የተጠናከረ ቡና',
+        href: '/menu-espresso.png',
       },
       {
         category: 'coffee',
         name: 'ማኪያቶ',
         description:
           'ኤስፕሬሶ በቀለለ የወተት አረፋ የተሸፈነ ልዩ የቡና ጣዕም',
+        href: '/menu-cappuccino.png',
       },
       {
         category: 'coffee',
         name: 'የኢትዮጵያ ቡና',
         description:
           'ልዩ ምርጫችን፤ ባህላዊ የኢትዮጵያ የቡና አፈላል ሥነ-ሥርዓትን በመከተል የተዘጋጀ',
+        href: '/coffee_menu.jpg',
       },
 
       // Cold Drinks
@@ -103,18 +106,21 @@ export const am = {
         name: 'ቀዝቃዛ ላቴ',
         description:
           'ትኩስነት የሚሰጥ ቀዝቃዛ ኤስፕሬሶ ከበረዶና ክሬም ካለው ወተት ጋር',
+        href: '/menu-iced-latte.png',
       },
       {
         category: 'coldDrinks',
-        name: 'ቀዝቃዛ ቡና',
+        name: 'ቀዝቃዛ ውሃ',
         description:
           'በቀስታ የተዘጋጀ ለስላሳና የበለፀገ የኢትዮጵያ ቡና ማጣጣሚያ',
+        href: '/water_menu2.jpg',
       },
       {
         category: 'coldDrinks',
         name: 'ቀዝቃዛ ሞካ',
         description:
           'ቸኮሌት፣ ኤስፕሬሶና ቀዝቃዛ ወተት በበረዶ ላይ የተዘጋጀ',
+        href: '/menu-iced-mocha.jpg',
       },
 
       // Snacks
@@ -123,18 +129,21 @@ export const am = {
         name: 'ባህላዊ ዳቦ',
         description:
           'ትኩስ የተጋገረ የኢትዮጵያ ዳቦ ከማር ጋር የሚቀርብ',
+        href: '/menu-ambasha.jpg',
       },
       {
         category: 'snacks',
         name: 'የተለያዩ ጣፋጭ ምግቦች',
         description:
           'ከአካባቢው ግብዓቶች የተዘጋጁ የቤት ሥራ ወቅታዊ ጣፋጭ ምግቦች',
+        href: '/menu-croissant.png',
       },
       {
         category: 'snacks',
-        name: 'ሳንድዊች',
+        name: 'ችፕስ',
         description:
           'ትኩስ ግብዓቶችን በመጠቀም በመረጡት የፕሮቲን አይነት የተዘጋጀ',
+        href: '/chips_menu.jpg',
       },
     ],
   },

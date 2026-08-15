@@ -137,7 +137,7 @@ export default function Menu() {
                     className="w-full h-full"
                   >
                     <Image
-                      src={getImageForItem(item.name, item.category)}
+                      src={item.href}
                       alt={item.name}
                       fill
                       className="object-cover"
