@@ -94,9 +94,9 @@ export const en = {
       // Cold Drinks
       {
         category: 'coldDrinks',
-        name: 'Iced Latte',
-        description: 'Refreshing cold espresso with ice and creamy milk',
-        href: '/menu-iced-latte.png',
+        name: 'Milk',
+        description: 'Fresh, creamy milk served chilled for a smooth and refreshing taste',
+        href: '/milk_menu.jpg',
       },
       {
         category: 'coldDrinks',
@@ -106,9 +106,9 @@ export const en = {
       },
       {
         category: 'coldDrinks',
-        name: 'Iced Mocha',
-        description: 'Chocolate, espresso, and cold milk over ice',
-        href: '/menu-iced-mocha.jpg',
+        name: 'Yoghurt',
+        description: 'Fresh, creamy yoghurt served chilled for a smooth and refreshing taste.',
+        href: '/yoghurt_menu.jpg',
       },
       // Snacks
       {
@@ -166,7 +166,7 @@ export const en = {
         rating: 5,
       },
       {
-        name: 'David Chen',
+        name: 'Dawit Demissie',
         text: 'Best coffee in town! The baristas really know their craft, and you can taste the quality in every cup. Highly recommended!',
         rating: 5,
       },

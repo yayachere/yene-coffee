@@ -103,10 +103,9 @@ export const am = {
       // Cold Drinks
       {
         category: 'coldDrinks',
-        name: 'ቀዝቃዛ ላቴ',
-        description:
-          'ትኩስነት የሚሰጥ ቀዝቃዛ ኤስፕሬሶ ከበረዶና ክሬም ካለው ወተት ጋር',
-        href: '/menu-iced-latte.png',
+        name: 'ወተት',
+        description: 'ትኩስና ንጹህ ወተት፣ ለስላሳና የሚያድስ ጣዕም ያለው',
+        href: '/milk_menu.jpg',
       },
       {
         category: 'coldDrinks',
@@ -117,10 +116,9 @@ export const am = {
       },
       {
         category: 'coldDrinks',
-        name: 'ቀዝቃዛ ሞካ',
-        description:
-          'ቸኮሌት፣ ኤስፕሬሶና ቀዝቃዛ ወተት በበረዶ ላይ የተዘጋጀ',
-        href: '/menu-iced-mocha.jpg',
+        name: 'እርጎ',
+        description: 'ትኩስና ክሬሚ የሆነ እርጎ፣ ለስላሳና አስደሳች ጣዕም በቀዝቃዛ መልኩ የሚቀርብ።',
+        href: '/yoghurt_menu.jpg',
       },
 
       // Snacks
@@ -189,7 +187,7 @@ export const am = {
         rating: 5,
       },
       {
-        name: 'ዴቪድ ቼን',
+        name: 'ዳዊት ደምሴ',
         text:
           'በከተማው ውስጥ ከምርጥ ቡና ቤቶች አንዱ ነው! የቡና አዘጋጆቹ ሥራቸውን በደንብ ያውቃሉ፣ የቡናውን ጥራትም በእያንዳንዱ ሲኒ ማጣጣም ይቻላል። በእርግጥ እመክረዋለሁ!',
         rating: 5,

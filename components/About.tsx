@@ -106,7 +106,7 @@ export default function About() {
           ))}
         </motion.div>
 
-        {/* Story Section */}
+        {/* Story Section 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ export default function About() {
           <p className="text-foreground/70 leading-relaxed">
             {t.about.storyText2}
           </p>
-        </motion.div>
+        </motion.div>*/}
       </div>
     </section>
   );
